@@ -87,7 +87,7 @@
   ```bash
   docker rm <container_name>  # (or <container_id>)
   ```
-
+  
 ## TROUBLESHOOT:
 
 - **Fetch logs of a container**  
