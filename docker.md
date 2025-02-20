@@ -7,11 +7,8 @@
 3. Docker image is an execuitable file which is used to create a container. We can create multiple conatiner using single image.
 
 
-```markdown
 # Docker Commands
-
-## IMAGES:
-
+### IMAGES:
 - **List all Local images**  
   ```bash
   docker images
