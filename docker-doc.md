@@ -4,7 +4,7 @@ A beginner-friendly guide to Docker, Docker Images, Containers, Docker Compose, 
 
 ---
 
-## 🐳 What is Docker?
+# 🐳 What is Docker?
 
 **Docker** is a platform that helps us build, package, run, and deploy applications inside **containers**.
 
@@ -301,6 +301,9 @@ If the container is running:
 
 ```bash
 docker stop CONTAINER_NAME
+```
+
+```bash
 docker rm CONTAINER_NAME
 ```
 
