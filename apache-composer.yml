@@ -1,0 +1,39 @@
+services:
+  mysql-db:
+    image: mysql:latest
+    container_name: mysql_server
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: abhiIndia
+      MYSQL_DATABASE: indiadb
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin_ui
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: mysql-db
+      PMA_PORT: 3306
+    depends_on:
+      - mysql-db
+
+  php-app:
+    build: .
+    container_name: php_apache_app
+    restart: always
+    ports:
+      - "8000:80" 
+    volumes:
+      - ./src:/var/www/html 
+    depends_on:
+      - mysql-db
+
+# ADD THESE TWO LINES AT THE VERY END:
+volumes:
+  mysql_data:
